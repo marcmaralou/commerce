@@ -1,0 +1,27 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    <h1>Active Listings</h1>
+            {% if none %}
+                <h2>There are no active listings available.</h2>
+            {% else %}
+                {% for product in products %}
+                    <br>
+                    <div class="card card-cascade" >
+                        <div class="view view-cascade overlay " >
+                            <img class="card-img-top" src="{{product.image_link}}" alt="Card image cap" style="height: 200px;">
+                            <a>
+                                <div class="mask rgba-white-slight"></div>
+                            </a>
+                        </div>
+                        <div class="card-body card-body-cascade text-center">
+                            <h4 class="card-title"><strong>{{product.title}}</strong></h4>
+                            <p class="">{{product.description}} <br> </p>
+                            <p class="font-weight-bold">{{product.starting_bid}}$</p>
+                            <p class="lead">Seller: {{product.seller}} <br> </p>
+                            <a href="{% url 'view_listing' product.id %}" class="btn btn-primary">View Listing</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% endif %}
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    <h1>Create Listing</h1>
+    <form action="{% url 'create_listing' %}" method="POST">
+        {% csrf_token %}
+            <input class="form-control" autofocus type="text" name="title" placeholder="Title">
+            <textarea class="form-control" name="description" rows="4" placeholder="Description"></textarea>
+            <input class="form-control" type="text" name="starting_bid" placeholder="Starting Bid">
+            <select class="form-control" name="category" placeholder="Category" required>
+                <option value="">Choose a Category</option>
+                <option value="fashion">Fashion</option>
+                <option value="toys">Toys</option>
+                <option value="electronics">Electronics</option>
+                <option value="home">Home</option>
+            </select>
+            <input class="form-control" type="text" name="image_link" placeholder="Image Link (Optional)">
+        <input class="btn btn-primary" type="submit" value="Create Listing">
+    </form>
+{% endblock %}
