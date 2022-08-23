@@ -1,0 +1,4 @@
+- Programmed a clone of the e-commerce auction website eBay fitted with similar capabilities
+- Implemented through the use of Python, SQLite, JavaScript, Django, and Bootstrap
+- Allows users to post listings, place bids and comment on listings, and add listings to a “watchlist”
+- Functionality and features differ depending on if the user is logged in or not and if the listing is theirs
